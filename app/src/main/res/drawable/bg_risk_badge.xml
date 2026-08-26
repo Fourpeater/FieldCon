@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tinted per heat category with setBackgroundTintList(). -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="@dimen/risk_badge_corner_radius" />
+    <solid android:color="@color/flag_red" />
+</shape>

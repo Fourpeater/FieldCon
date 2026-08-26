@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sessionOutputRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/brand_green"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/brand_green"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height"
+                android:background="@color/brand_green"
+                app:navigationIcon="@drawable/ic_arrow_back">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sessionOutputScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/screen_padding"
+            android:paddingTop="@dimen/screen_padding"
+            android:paddingBottom="@dimen/screen_padding_bottom">
+
+            <TextView
+                style="@style/ScreenTitleText"
+                android:text="@string/title_session_result" />
+
+            <TextView
+                android:id="@+id/textLocationDate"
+                style="@style/CaptionText"
+                android:layout_marginTop="@dimen/space_tight"
+                android:textSize="13sp"
+                android:text="@string/location_date" />
+
+            <!-- Thermal result -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/FieldCard"
+                android:layout_marginTop="@dimen/space_section">
+
+                <LinearLayout style="@style/FieldCardBody">
+
+                    <TextView
+                        style="@style/SectionLabelText"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/section_thermal_result" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textRiskGlyph"
+                            android:layout_width="@dimen/risk_badge_size"
+                            android:layout_height="@dimen/risk_badge_size"
+                            android:background="@drawable/bg_risk_badge"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:text="@string/risk_glyph" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_block"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textRiskLabel"
+                                style="@style/ScreenTitleText"
+                                android:layout_width="match_parent"
+                                android:text="@string/risk_headline" />
+
+                            <TextView
+                                android:id="@+id/textRiskValue"
+                                style="@style/CaptionText"
+                                android:layout_marginTop="@dimen/space_paired"
+                                android:textSize="14sp"
+                                android:text="@string/wbgt_measured" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textRiskDescription"
+                        style="@style/BodyText"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:text="@string/risk_description" />
+
+                    <TextView
+                        android:id="@+id/textWorkRest"
+                        style="@style/BodyText"
+                        android:layout_marginTop="@dimen/space_item"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        android:text="@string/work_rest_line" />
+
+                    <TextView
+                        android:id="@+id/textFluidWarning"
+                        style="@style/CaptionText"
+                        android:layout_marginTop="@dimen/space_tight"
+                        android:text="@string/water_line" />
+
+                    <TextView
+                        android:id="@+id/textThermalMethod"
+                        style="@style/CaptionText"
+                        android:layout_marginTop="@dimen/space_item"
+                        android:textStyle="italic"
+                        android:text="@string/thermal_method_measured" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Light timeline -->
+            <TextView
+                style="@style/SectionLabelText"
+                android:text="@string/section_light_timeline" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_item"
+                android:adjustViewBounds="true"
+                android:importantForAccessibility="no"
+                android:scaleType="fitXY"
+                android:src="@drawable/timeline_light" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_tight">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideHour06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.25" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideHour12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideHour18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.75" />
+
+                <TextView
+                    style="@style/TimelineAxisText"
+                    android:text="@string/hour_00"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/TimelineAxisText"
+                    android:text="@string/hour_06"
+                    app:layout_constraintEnd_toEndOf="@id/guideHour06"
+                    app:layout_constraintStart_toStartOf="@id/guideHour06"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/TimelineAxisText"
+                    android:text="@string/hour_12"
+                    app:layout_constraintEnd_toEndOf="@id/guideHour12"
+                    app:layout_constraintStart_toStartOf="@id/guideHour12"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/TimelineAxisText"
+                    android:text="@string/hour_18"
+                    app:layout_constraintEnd_toEndOf="@id/guideHour18"
+                    app:layout_constraintStart_toStartOf="@id/guideHour18"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/TimelineAxisText"
+                    android:text="@string/hour_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textAstroSummary"
+                style="@style/BodyText"
+                android:layout_marginTop="@dimen/space_item"
+                android:text="@string/astro_summary" />
+
+            <TextView
+                android:id="@+id/textMoonSummary"
+                style="@style/BodyText"
+                android:layout_marginTop="@dimen/space_paired"
+                android:text="@string/moon_summary" />
+
+            <TextView
+                android:id="@+id/textAstroMethod"
+                style="@style/CaptionText"
+                android:layout_marginTop="@dimen/space_tight"
+                android:text="@string/astro_method"
+                android:textStyle="italic" />
+
+            <!-- Recommended windows -->
+            <TextView
+                style="@style/SectionLabelText"
+                android:text="@string/section_recommended_windows" />
+
+            <TextView
+                android:id="@+id/textNoWindows"
+                style="@style/BodyText"
+                android:layout_marginTop="@dimen/space_item"
+                android:background="@color/brand_green_wash"
+                android:padding="@dimen/card_padding_compact"
+                android:text="@string/msg_no_recommended_windows"
+                android:textStyle="italic"
+                android:visibility="gone" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/FieldCard"
+                android:layout_marginTop="@dimen/space_item">
+
+                <LinearLayout
+                    style="@style/FieldCardBody"
+                    android:padding="@dimen/card_padding_compact">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/window_best"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_block"
+                            android:fontFamily="monospace"
+                            android:letterSpacing="0.03"
+                            android:text="@string/window_best_range"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/CaptionText"
+                        android:layout_marginTop="@dimen/space_paired"
+                        android:text="@string/window_best_reason" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/FieldCard"
+                android:layout_marginTop="@dimen/space_item"
+                android:layout_marginBottom="@dimen/space_item">
+
+                <LinearLayout
+                    style="@style/FieldCardBody"
+                    android:padding="@dimen/card_padding_compact">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/window_alternate"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_block"
+                            android:fontFamily="monospace"
+                            android:letterSpacing="0.03"
+                            android:text="@string/window_alternate_range"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/CaptionText"
+                        android:layout_marginTop="@dimen/space_paired"
+                        android:text="@string/window_alternate_reason" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Record this session -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/FieldCard"
+                android:layout_marginTop="@dimen/space_section">
+
+                <LinearLayout style="@style/FieldCardBody">
+
+                    <TextView
+                        style="@style/SectionLabelText"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/section_record_session" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupDecision"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_tight"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioApprove"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/action_approve" />
+
+                        <RadioButton
+                            android:id="@+id/radioDeny"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_action"
+                            android:text="@string/action_deny" />
+                    </RadioGroup>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_item"
+                        android:hint="@string/label_recorded_by">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputRecordedBy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_item"
+                        android:hint="@string/label_record_note">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputRecordNote"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:minLines="2" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonSaveRecord"
+                        style="@style/FieldButton.Primary"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:text="@string/action_save_record" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

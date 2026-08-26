@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- My color theme-->
+    <style name="Base.Theme.FieldCon_Ugale" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/brand_green</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/brand_green_container</item>
+        <item name="colorOnPrimaryContainer">@color/brand_green_dark</item>
+        <item name="colorSecondary">@color/brand_maroon</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <item name="colorSurface">@color/surface_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorOutline">@color/outline</item>
+        <item name="android:colorBackground">@color/surface_page</item>
+        <item name="android:windowBackground">@color/surface_page</item>
+
+        <!-- The app bar is always brand green, so the status bar always wants light icons. -->
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- Cards are painted with an exact colour; keep Material's elevation tint off them. -->
+        <item name="elevationOverlayEnabled">false</item>
+    </style>
+
+    <style name="Theme.FieldCon_Ugale" parent="Base.Theme.FieldCon_Ugale" />
+
+</resources>

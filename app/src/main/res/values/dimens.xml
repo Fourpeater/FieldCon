@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Page -->
+    <dimen name="screen_padding">20dp</dimen>
+    <!-- Clears the gesture bar; the layouts no longer pad for insets in code. -->
+    <dimen name="screen_padding_bottom">48dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+
+    <!-- Vertical rhythm, largest to smallest -->
+    <dimen name="space_action">28dp</dimen>
+    <dimen name="space_section">18dp</dimen>
+    <dimen name="space_block">12dp</dimen>
+    <dimen name="space_item">8dp</dimen>
+    <dimen name="space_tight">4dp</dimen>
+
+    <!-- A label and the value it belongs to -->
+    <dimen name="space_paired">2dp</dimen>
+
+    <!-- Cards -->
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="card_padding_compact">12dp</dimen>
+    <dimen name="card_corner_radius">12dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+
+    <!-- Hairline between a card's content and the actions at its foot -->
+    <dimen name="divider_height">1dp</dimen>
+
+    <!-- Controls -->
+    <dimen name="button_corner_radius">5dp</dimen>
+    <dimen name="button_elevation">5dp</dimen>
+    <dimen name="button_padding_vertical">16dp</dimen>
+    <dimen name="risk_badge_size">52dp</dimen>
+    <!-- The same badge in a list, where it labels a row instead of leading a card -->
+    <dimen name="risk_badge_size_compact">40dp</dimen>
+    <dimen name="risk_badge_corner_radius">6dp</dimen>
+
+</resources>

@@ -1,0 +1,54 @@
+# ============================================================================
+# IGNORED
+# Build output and per-machine state. All of it is regenerated automatically
+# on a fresh clone, so none of it belongs in the repository.
+# ============================================================================
+
+*.iml
+.gradle
+/build
+/captures
+.externalNativeBuild
+.cxx
+.DS_Store
+
+# Points at THIS machine's Android SDK. Android Studio rewrites it on first
+# sync, so committing it would break the build on every other machine.
+/local.properties
+
+# Editor state
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+
+# ============================================================================
+# NEVER IGNORED
+# The project will not build on another machine without these. They are
+# force-tracked so that a broad pattern above, or a global gitignore on some
+# other machine (a stray "*.jar" is the classic one), cannot drop them.
+# ============================================================================
+
+# Gradle wrapper. Without the .jar, ./gradlew fails on every fresh clone.
+!gradlew
+!gradlew.bat
+!gradle/wrapper/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Pins the JDK and lets Gradle fetch it per platform, so the build works on
+# machines that do not already have the right JDK installed.
+!gradle/gradle-daemon-jvm.properties
+
+# Build scripts, dependency versions, project settings.
+!gradle/libs.versions.toml
+!/build.gradle.kts
+!/settings.gradle.kts
+!/gradle.properties
+!/app/build.gradle.kts
+
+# Source, resources, manifest, and the R8 keep rules AGP merges from that dir.
+!/app/src/
+!/app/src/main/keepRules/

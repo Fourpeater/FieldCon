@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/savedRecordsRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/brand_green"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/brand_green"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height"
+                android:background="@color/brand_green"
+                app:navigationIcon="@drawable/ic_arrow_back">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/savedRecordsScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/screen_padding"
+            android:paddingTop="@dimen/screen_padding"
+            android:paddingBottom="@dimen/screen_padding_bottom">
+
+            <TextView
+                style="@style/ScreenTitleText"
+                android:text="@string/title_saved_records" />
+
+            <TextView
+                style="@style/BodyText"
+                android:layout_marginTop="@dimen/space_item"
+                android:text="@string/saved_records_intro" />
+
+            <!-- Shown instead of the cards below when nothing has been recorded. -->
+            <TextView
+                android:id="@+id/textNoSavedRecords"
+                style="@style/BodyText"
+                android:layout_marginTop="@dimen/space_section"
+                android:background="@color/brand_green_wash"
+                android:padding="@dimen/card_padding_compact"
+                android:text="@string/msg_no_session_records"
+                android:textStyle="italic"
+                android:visibility="gone" />
+
+            <!-- =============== 15 Aug 2026, Camp Bullis, denied =============== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardRecord1"
+                style="@style/FieldCard"
+                android:layout_marginTop="@dimen/space_section">
+
+                <LinearLayout style="@style/FieldCardBody">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textRecord1Glyph"
+                            style="@style/RiskBadgeCompact"
+                            android:backgroundTint="@color/flag_red"
+                            android:text="@string/risk_glyph" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_block"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/ItemTitleText"
+                                android:text="@string/location_camp_bullis" />
+
+                            <TextView
+                                style="@style/CaptionText"
+                                android:layout_marginTop="@dimen/space_paired"
+                                android:text="@string/record_1_when" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- The decision, next to the condition it was made under. -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:baselineAligned="false"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DecisionStampText.Denied"
+                            android:text="@string/decision_denied" />
+
+                        <TextView
+                            style="@style/BodyText"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="@dimen/space_item"
+                            android:layout_weight="1"
+                            android:text="@string/record_1_risk"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/CaptionText"
+                        android:layout_marginTop="@dimen/space_tight"
+                        android:text="@string/record_1_conditions" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:baselineAligned="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DataRowLabelText"
+                            android:text="@string/label_best_window" />
+
+                        <TextView
+                            style="@style/DataRowValueText"
+                            android:text="@string/record_1_window" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_tight"
+                        android:baselineAligned="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DataRowLabelText"
+                            android:text="@string/label_work_rest" />
+
+                        <TextView
+                            style="@style/DataRowValueText"
+                            android:text="@string/record_1_work_rest" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/CaptionText"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:text="@string/record_1_recorded_by" />
+
+                    <!-- The note is the one part of a record a person wrote, so it is set apart. -->
+                    <TextView
+                        style="@style/BodyText"
+                        android:layout_marginTop="@dimen/space_item"
+                        android:background="@color/brand_green_wash"
+                        android:padding="@dimen/card_padding_compact"
+                        android:text="@string/record_1_note"
+                        android:textStyle="italic" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_height"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:background="@color/outline" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_tight"
+                        android:baselineAligned="false"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonExportRecord1"
+                            style="@style/CardActionButton.Primary"
+                            android:text="@string/action_export_pdf" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonDeleteRecord1"
+                            style="@style/CardActionButton.Secondary"
+                            android:text="@string/action_delete_record" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============== 14 Aug 2026, Camp Bullis, approved ============== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardRecord2"
+                style="@style/FieldCard"
+                android:layout_marginTop="@dimen/space_item">
+
+                <LinearLayout style="@style/FieldCardBody">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textRecord2Glyph"
+                            style="@style/RiskBadgeCompact"
+                            android:backgroundTint="@color/flag_yellow"
+                            android:text="@string/risk_glyph_yellow" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_block"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/ItemTitleText"
+                                android:text="@string/location_camp_bullis" />
+
+                            <TextView
+                                style="@style/CaptionText"
+                                android:layout_marginTop="@dimen/space_paired"
+                                android:text="@string/record_2_when" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:baselineAligned="false"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DecisionStampText.Approved"
+                            android:text="@string/decision_approved" />
+
+                        <TextView
+                            style="@style/BodyText"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="@dimen/space_item"
+                            android:layout_weight="1"
+                            android:text="@string/record_2_risk"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/CaptionText"
+                        android:layout_marginTop="@dimen/space_tight"
+                        android:text="@string/record_2_conditions" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:baselineAligned="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DataRowLabelText"
+                            android:text="@string/label_best_window" />
+
+                        <TextView
+                            style="@style/DataRowValueText"
+                            android:text="@string/record_2_window" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_tight"
+                        android:baselineAligned="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DataRowLabelText"
+                            android:text="@string/label_work_rest" />
+
+                        <TextView
+                            style="@style/DataRowValueText"
+                            android:text="@string/record_2_work_rest" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/CaptionText"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:text="@string/record_2_recorded_by" />
+
+                    <TextView
+                        style="@style/BodyText"
+                        android:layout_marginTop="@dimen/space_item"
+                        android:background="@color/brand_green_wash"
+                        android:padding="@dimen/card_padding_compact"
+                        android:text="@string/record_2_note"
+                        android:textStyle="italic" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_height"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:background="@color/outline" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_tight"
+                        android:baselineAligned="false"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonExportRecord2"
+                            style="@style/CardActionButton.Primary"
+                            android:text="@string/action_export_pdf" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonDeleteRecord2"
+                            style="@style/CardActionButton.Secondary"
+                            android:text="@string/action_delete_record" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ====== 02 Jul 2026, Fort Irwin, approved, no note written ====== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardRecord3"
+                style="@style/FieldCard"
+                android:layout_marginTop="@dimen/space_item">
+
+                <LinearLayout style="@style/FieldCardBody">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textRecord3Glyph"
+                            style="@style/RiskBadgeCompact"
+                            android:backgroundTint="@color/flag_green"
+                            android:text="@string/risk_glyph_green" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_block"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/ItemTitleText"
+                                android:text="@string/saved_location_irwin" />
+
+                            <TextView
+                                style="@style/CaptionText"
+                                android:layout_marginTop="@dimen/space_paired"
+                                android:text="@string/record_3_when" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:baselineAligned="false"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DecisionStampText.Approved"
+                            android:text="@string/decision_approved" />
+
+                        <TextView
+                            style="@style/BodyText"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="@dimen/space_item"
+                            android:layout_weight="1"
+                            android:text="@string/record_3_risk"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/CaptionText"
+                        android:layout_marginTop="@dimen/space_tight"
+                        android:text="@string/record_3_conditions" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:baselineAligned="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DataRowLabelText"
+                            android:text="@string/label_best_window" />
+
+                        <TextView
+                            style="@style/DataRowValueText"
+                            android:text="@string/record_3_window" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_tight"
+                        android:baselineAligned="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DataRowLabelText"
+                            android:text="@string/label_work_rest" />
+
+                        <TextView
+                            style="@style/DataRowValueText"
+                            android:text="@string/record_3_work_rest" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/CaptionText"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:text="@string/record_3_recorded_by" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_height"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:background="@color/outline" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_tight"
+                        android:baselineAligned="false"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonExportRecord3"
+                            style="@style/CardActionButton.Primary"
+                            android:text="@string/action_export_pdf" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonDeleteRecord3"
+                            style="@style/CardActionButton.Secondary"
+                            android:text="@string/action_delete_record" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Carried onto every exported record, so it is stated on the screen as well. -->
+            <TextView
+                style="@style/BodyText"
+                android:layout_marginTop="@dimen/space_section"
+                android:background="@color/brand_green_wash"
+                android:padding="@dimen/card_padding_compact"
+                android:text="@string/pdf_disclaimer"
+                android:textStyle="italic" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

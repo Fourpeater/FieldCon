@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- =================== COMMENT TEMPLATE SIGMA DOG =================== -->
+
+    <!-- ============================ App-wide ============================ -->
+    <string name="app_name">FieldCon</string>
+    <string name="app_title">Field Conditions Planner</string>
+    <string name="app_tagline">Answers on question: when is it safe to work, and can you see what you\'re doing? Thermal guidance from publishes tables; light and darkness from on-device astronomical calculation. No network required.</string>
+    <string name="app_disclaimer">Offline planning aid. Not a measuring instrument. You are responsible for the inputs you supply.</string>
+
+    <!-- ============================== Home ============================== -->
+    <string name="action_new_session_plan">New Session Plan</string>
+    <string name="action_saved_locations">Saved Locations</string>
+    <string name="action_saved_records">Saved Records</string>
+
+    <!-- ========================== Session input ========================== -->
+    <string name="title_new_session">New Session</string>
+
+    <string name="label_date">Date</string>
+    <string name="value_session_date">15 Aug 2026</string>
+    <string name="label_location">Location</string>
+    <string name="label_manual_entry">Enter coordinates manually</string>
+    <string name="location_camp_bullis">Camp Bullis, TX</string>
+    <string name="label_location_name">Location name</string>
+    <string name="label_latitude">Latitude (°, + = N)</string>
+    <string name="label_longitude">Longitude (°, + = E)</string>
+    <string name="label_utc_offset">UTC offset (hours)</string>
+    <string name="label_work_rate">Intended work rate</string>
+    <string name="label_acclimatization">Acclimatization status</string>
+    <string name="label_clothing">Clothing / equipment</string>
+    <string name="label_thermal_mode">Thermal reading type</string>
+    <string name="label_measured_wbgt">Measured WBGT (°F)</string>
+    <string name="label_temp_f">Air temperature (°F)</string>
+    <string name="label_rh_percent">Relative humidity (%)</string>
+
+    <string name="option_work_easy">Easy</string>
+    <string name="option_work_moderate">Moderate</string>
+    <string name="option_work_hard">Hard</string>
+    <string name="option_not_acclimatized">Not acclimatized</string>
+    <string name="option_acclimatized">Acclimatized</string>
+    <string name="option_mode_measured_wbgt">Measured WBGT</string>
+    <string name="option_mode_heat_index">Heat Index (temp + humidity)</string>
+
+    <string-array name="location_options">
+        <item>@string/location_camp_bullis</item>
+        <item>@string/label_manual_entry</item>
+    </string-array>
+
+    <!-- Clothing adjustments to WBGT, TB MED 507 table 3-2. -->
+    <string-array name="clothing_options">
+        <item>Work uniform (no adjustment)</item>
+        <item>Body armor (+5 °F WBGT)</item>
+        <item>MOPP 4 (+10 °F WBGT)</item>
+    </string-array>
+
+    <string name="action_save_location">Save this location</string>
+    <string name="action_compute">Compute Session Window</string>
+
+    <!-- ===================== Session result: header ===================== -->
+    <string name="title_session_result">Output Result</string>
+    <string name="location_date">Camp Bullis, TX - Sat, 15 Aug 2026</string>
+
+    <!-- ===================== Session result: thermal ===================== -->
+    <string name="section_thermal_result">Thermal Result</string>
+
+    <!-- The five heat categories the risk badge can show; the sample session is Red. -->
+
+    <string name="flag_white">White</string>
+    <string name="flag_green">Green</string>
+    <string name="flag_yellow">Yellow</string>
+    <string name="flag_red">Red</string>
+    <string name="flag_black">Black</string>
+
+    <string name="risk_low">Low risk</string>
+    <string name="risk_moderate">Moderate risk</string>
+    <string name="risk_elevated">Elevated risk</string>
+    <string name="risk_high">High risk</string>
+    <string name="risk_extreme">Extreme risk</string>
+
+    <string name="risk_glyph">R</string>
+    <string name="risk_headline">Red - High risk</string>
+    <string name="wbgt_measured">WBGT 88.4 °F (measured)</string>
+    <string name="risk_description">High casualty risk for unacclimatized personnel at moderate work.</string>
+    <string name="work_rest_line">Work / rest: 30 min work, 30 min rest</string>
+    <string name="water_line">Water: 1 qt per hour. Do not exceed 1 1/2 qt/hr or 12 qt/day.</string>
+    <string name="thermal_method_measured">Method: measured WBGT, work/rest table lookup.</string>
+
+    <!-- ================== Session result: light timeline ================== -->
+    <string name="section_light_timeline">Light timeline</string>
+    <string name="astro_summary">Sunrise 07:02 - Sunset 20:15 - Civil dusk 20:40</string>
+    <string name="moon_summary">Waxing gibbous, 78% illuminated - Moonrise 17:36</string>
+    <string name="hour_00">00</string>
+    <string name="hour_06">06</string>
+    <string name="hour_12">12</string>
+    <string name="hour_18">18</string>
+    <string name="hour_24">24</string>
+    <string name="astro_method">Astronomical times computed locally.</string>
+
+    <!-- ================ Session result: recommended windows ================ -->
+    <string name="section_recommended_windows">Recommended Windows</string>
+    <string name="window_best">1 - Best window</string>
+    <string name="window_best_range">07:05 - 09:35</string>
+    <string name="window_best_reason">Full daylight, WBGT below 82 °F, green band.</string>
+    <string name="window_alternate">2 - Alternate</string>
+    <string name="window_alternate_range">19:20 - 20:40</string>
+    <string name="window_alternate_reason">Falling heat load, daylight into civil dusk.</string>
+    <string name="msg_no_recommended_windows">No non-daylight window meets the entered thermal condition today. Re-check conditions closer to the planned time, or reconsider work rate / acclimatization / clothing.</string>
+
+    <!-- ================== Session result: record decision ================== -->
+    <string name="section_record_session">Record this session</string>
+    <string name="action_approve">Approve</string>
+    <string name="action_deny">Deny</string>
+    <string name="label_recorded_by">Recorded by (name)</string>
+    <string name="label_record_note">Note (optional)</string>
+    <string name="action_save_record">Save record</string>
+
+    <!-- ========================= Saved locations ========================= -->
+    <string name="title_saved_locations">Saved Locations</string>
+    <string name="saved_locations_intro">Places you plan sessions at, kept on this device. The coordinates and UTC offset are what the sun and moon times are computed from, so keep them right.</string>
+    <string name="hint_tap_location">Tap a location to start a session there.</string>
+    <string name="action_add_location">Add location</string>
+    <string name="action_delete">Delete</string>
+    <string name="msg_no_saved_locations">No saved locations yet. Add one from the New Session Plan screen or here.</string>
+    <string name="section_add_location">Add a location</string>
+
+    <!-- Sample locations. Signed decimal degrees, same convention as the input screen. -->
+    <string name="saved_location_bullis_coords">29.7133, -98.5678</string>
+    <string name="saved_location_bullis_meta">UTC-5 - Last used 15 Aug 2026</string>
+
+    <string name="saved_location_irwin">Fort Irwin, CA</string>
+    <string name="saved_location_irwin_coords">35.2619, -116.6847</string>
+    <string name="saved_location_irwin_meta">UTC-7 - Last used 02 Jul 2026</string>
+
+    <string name="saved_location_range14">Range 14 - north access</string>
+    <string name="saved_location_range14_coords">29.7412, -98.5901</string>
+    <string name="saved_location_range14_meta">UTC-5 - Not used yet</string>
+
+    <!-- ========================== Saved records ========================== -->
+    <string name="title_saved_records">Saved Records</string>
+    <string name="saved_records_intro">Every session plan you approved or denied, kept with the conditions it was decided on. Newest first.</string>
+    <string name="action_export_pdf">Export as PDF</string>
+    <string name="action_delete_record">Delete record</string>
+    <string name="msg_no_session_records">No saved records yet. Approve or deny a session plan to record one.</string>
+    <string name="pdf_disclaimer">Conditions were user-supplied; not measured by this application.</string>
+
+    <string name="decision_approved">Approved</string>
+    <string name="decision_denied">Denied</string>
+
+    <string name="label_best_window">Best window</string>
+    <string name="label_work_rest">Work / rest</string>
+
+    <!-- Heat category glyphs for the record badges. Red reuses @string/risk_glyph. -->
+    <string name="risk_glyph_yellow">Y</string>
+    <string name="risk_glyph_green">G</string>
+
+    <!-- Sample record 1: Camp Bullis, denied. The session the result screen shows. -->
+    <string name="record_1_when">Sat, 15 Aug 2026 - recorded 06:41</string>
+    <string name="record_1_risk">Red - High risk</string>
+    <string name="record_1_conditions">WBGT 88.4 °F (measured) - moderate work, not acclimatized, body armor.</string>
+    <string name="record_1_window">07:05 - 09:35</string>
+    <string name="record_1_work_rest">30 / 30 min</string>
+    <string name="record_1_recorded_by">Recorded by SSG Ugale.</string>
+    <string name="record_1_note">Deferred to 16 Aug first light. Crew arrived yesterday and the armor adjustment puts the afternoon over the line.</string>
+
+    <!-- Sample record 2: Camp Bullis, approved -->
+    <string name="record_2_when">Fri, 14 Aug 2026 - recorded 05:58</string>
+    <string name="record_2_risk">Yellow - Elevated risk</string>
+    <string name="record_2_conditions">WBGT 86.2 °F (measured) - moderate work, not acclimatized, work uniform.</string>
+    <string name="record_2_window">06:55 - 10:10</string>
+    <string name="record_2_work_rest">40 / 20 min</string>
+    <string name="record_2_recorded_by">Recorded by SSG Ugale.</string>
+    <string name="record_2_note">Water and shade posted at the start point. Held to the morning window, off the range by 1030.</string>
+
+    <!-- Sample record 3: Fort Irwin, approved, estimated from temperature and humidity -->
+    <string name="record_3_when">Thu, 02 Jul 2026 - recorded 19:12</string>
+    <string name="record_3_risk">Green - Moderate risk</string>
+    <string name="record_3_conditions">WBGT 83.4 °F (estimated from 98 °F, 15% RH) - easy work, acclimatized, work uniform.</string>
+    <string name="record_3_window">05:25 - 08:10</string>
+    <string name="record_3_work_rest">No limit</string>
+    <string name="record_3_recorded_by">Recorded by SGT Reyes.</string>
+
+</resources>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- =============================== Text =============================== -->
+
+    <!-- Screen heading -->
+    <style name="ScreenTitleText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- Small capitalised heading -->
+    <style name="SectionLabelText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/space_section</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.09</item>
+        <item name="android:textColor">@color/brand_green</item>
+    </style>
+
+    <!-- Bold label above an input group -->
+    <style name="FieldLabelText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/space_section</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="BodyText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="CaptionText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_muted</item>
+    </style>
+
+    <!-- Hour label under the light timeline -->
+    <style name="TimelineAxisText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/timeline_axis_text</item>
+    </style>
+
+    <!-- Name on the left of a data row, hard against the value it belongs to -->
+    <style name="DataRowLabelText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- Value on the right of a data row; monospaced so times and figures line up down a list -->
+    <style name="DataRowValueText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/space_block</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- Coordinates under a saved location; monospaced for the same reason -->
+    <style name="CoordinateText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <!-- Name of a saved location or a recorded session, at the head of its card -->
+    <style name="ItemTitleText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- ============================== Stamps ============================== -->
+
+    <!-- The approve / deny mark on a saved record. Tinted per decision, the way the risk badge
+         is tinted per heat category. -->
+    <style name="DecisionStampText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_decision_stamp</item>
+        <item name="android:paddingHorizontal">@dimen/space_item</item>
+        <item name="android:paddingVertical">@dimen/space_tight</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.09</item>
+    </style>
+
+    <style name="DecisionStampText.Approved">
+        <item name="android:backgroundTint">@color/brand_green_container</item>
+        <item name="android:textColor">@color/brand_green_dark</item>
+    </style>
+
+    <style name="DecisionStampText.Denied">
+        <item name="android:backgroundTint">@color/brand_maroon_container</item>
+        <item name="android:textColor">@color/brand_maroon</item>
+    </style>
+
+    <!-- Heat category badge as it appears in a list. The session result screen uses the full
+         size version; both take their colour from android:backgroundTint. -->
+    <style name="RiskBadgeCompact">
+        <item name="android:layout_width">@dimen/risk_badge_size_compact</item>
+        <item name="android:layout_height">@dimen/risk_badge_size_compact</item>
+        <item name="android:background">@drawable/bg_risk_badge</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- =============================== Cards =============================== -->
+
+    <!-- White panel  -->
+    <style name="FieldCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardBackgroundColor">@color/surface_card</item>
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="FieldCardBody">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/card_padding</item>
+    </style>
+
+    <!-- ============================== Buttons ============================== -->
+
+    <style name="FieldButton" parent="Widget.Material3.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/button_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/button_padding_vertical</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="elevation">@dimen/button_elevation</item>
+        <item name="iconTint">@color/white</item>
+    </style>
+
+    <style name="FieldButton.Primary">
+        <item name="backgroundTint">@color/brand_green</item>
+    </style>
+
+    <style name="FieldButton.Secondary">
+        <item name="backgroundTint">@color/brand_maroon</item>
+    </style>
+
+    <!-- Action belonging to one card rather than to the page. Text only, so a list of cards does
+         not turn into a wall of filled buttons. -->
+    <style name="CardActionButton" parent="Widget.Material3.Button.TextButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+    </style>
+
+    <style name="CardActionButton.Primary">
+        <item name="android:textColor">@color/brand_green</item>
+    </style>
+
+    <style name="CardActionButton.Secondary">
+        <item name="android:textColor">@color/brand_maroon</item>
+    </style>
+
+</resources>

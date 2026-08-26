@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sessionInputRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/brand_green"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/brand_green"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height"
+                android:background="@color/brand_green"
+                app:navigationIcon="@drawable/ic_arrow_back">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sessionInputScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/screen_padding"
+            android:paddingTop="@dimen/screen_padding"
+            android:paddingBottom="@dimen/screen_padding_bottom">
+
+            <TextView
+                style="@style/ScreenTitleText"
+                android:text="@string/title_new_session" />
+
+            <!-- Date -->
+            <TextView
+                style="@style/FieldLabelText"
+                android:text="@string/label_date" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonPickDate"
+                style="@style/FieldButton.Secondary"
+                android:layout_marginTop="@dimen/space_item"
+                android:paddingTop="@dimen/card_padding_compact"
+                android:paddingBottom="@dimen/card_padding_compact"
+                app:icon="@android:drawable/ic_menu_my_calendar"
+                app:iconGravity="textStart"
+                android:text="@string/value_session_date"
+                app:iconPadding="@dimen/card_padding_compact" />
+
+            <!-- Location -->
+            <TextView
+                style="@style/FieldLabelText"
+                android:text="@string/label_location" />
+
+            <Spinner
+                android:id="@+id/spinnerLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_item"
+                android:entries="@array/location_options" />
+
+            <LinearLayout
+                android:id="@+id/groupManualLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_item"
+                    android:hint="@string/label_location_name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputLocationName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_item"
+                    android:hint="@string/label_latitude">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputLatitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal|numberSigned" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_item"
+                    android:hint="@string/label_longitude">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputLongitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal|numberSigned" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_item"
+                    android:hint="@string/label_utc_offset">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputUtcOffset"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal|numberSigned" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonSaveLocation"
+                    style="@style/FieldButton.Secondary"
+                    android:layout_marginTop="@dimen/space_block"
+                    android:paddingTop="@dimen/card_padding_compact"
+                    android:paddingBottom="@dimen/card_padding_compact"
+                    android:text="@string/action_save_location" />
+            </LinearLayout>
+
+            <!-- Work rate -->
+            <TextView
+                style="@style/FieldLabelText"
+                android:text="@string/label_work_rate" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupWorkRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_tight">
+
+                <RadioButton
+                    android:id="@+id/radioWorkEasy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/option_work_easy" />
+
+                <RadioButton
+                    android:id="@+id/radioWorkModerate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/option_work_moderate" />
+
+                <RadioButton
+                    android:id="@+id/radioWorkHard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/option_work_hard" />
+            </RadioGroup>
+
+            <!-- Acclimatization -->
+            <TextView
+                style="@style/FieldLabelText"
+                android:text="@string/label_acclimatization" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupAcclimatization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_tight">
+
+                <RadioButton
+                    android:id="@+id/radioNotAcclimatized"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/option_not_acclimatized" />
+
+                <RadioButton
+                    android:id="@+id/radioAcclimatized"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/option_acclimatized" />
+            </RadioGroup>
+
+            <!-- Clothing -->
+            <TextView
+                style="@style/FieldLabelText"
+                android:text="@string/label_clothing" />
+
+            <Spinner
+                android:id="@+id/spinnerClothing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_item"
+                android:entries="@array/clothing_options" />
+
+            <!-- Thermal reading -->
+            <TextView
+                style="@style/FieldLabelText"
+                android:text="@string/label_thermal_mode" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupThermalMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_tight">
+
+                <RadioButton
+                    android:id="@+id/radioModeMeasuredWbgt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/option_mode_measured_wbgt" />
+
+                <RadioButton
+                    android:id="@+id/radioModeHeatIndex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/option_mode_heat_index" />
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutMeasuredWbgt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_item"
+                android:hint="@string/label_measured_wbgt">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputMeasuredWbgt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal|numberSigned" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/groupTempHumidity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_item"
+                    android:hint="@string/label_temp_f">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputTempF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal|numberSigned" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_item"
+                    android:hint="@string/label_rh_percent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputRh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCompute"
+                style="@style/FieldButton.Primary"
+                android:layout_marginTop="@dimen/space_action"
+                android:text="@string/action_compute" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

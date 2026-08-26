@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Brand -->
+    <color name="brand_green">#FF26433D</color>
+    <color name="brand_green_dark">#FF14302B</color>
+    <color name="brand_green_container">#FFD7E2DF</color>
+
+    <!-- brand green FOR INLINE -->
+    <color name="brand_green_wash">#1A26433D</color>
+    <color name="brand_maroon">#FF43262C</color>
+    <color name="brand_maroon_container">#FFE7D9DC</color>
+
+    <!-- Surfaces -->
+    <color name="surface_page">#FFF7F7F5</color>
+    <color name="surface_card">#FFFFFFFF</color>
+    <color name="outline">#FFDDE0DE</color>
+
+    <!-- Text -->
+    <color name="text_primary">#FF1B1D1C</color>
+    <color name="text_secondary">#FF4E5654</color>
+    <color name="text_muted">#FF8A918F</color>
+
+    <!-- WBGT heat category flags: the five states of the risk badge -->
+    <color name="flag_white">#FF78909C</color>
+    <color name="flag_green">#FF2E7D32</color>
+    <color name="flag_yellow">#FFF9A825</color>
+    <color name="flag_red">#FFC62828</color>
+    <color name="flag_black">#FF212121</color>
+
+    <!-- Light timeline: gradient sky, one stop per sun event -->
+    <color name="sky_night">#FF101731</color>
+    <color name="sky_astronomical">#FF29376B</color>
+    <color name="sky_nautical">#FF446597</color>
+    <color name="sky_civil">#FF8BADCB</color>
+    <color name="sky_sunrise">#FFEFDFBE</color>
+    <color name="sky_midday">#FFF7E9CC</color>
+    <color name="sky_sunset">#FFEFD8AE</color>
+
+    <!-- Light timeline: chrome -->
+    <color name="timeline_glyph">#8C26433D</color>
+    <color name="timeline_marker">#FFFFFFFF</color>
+    <color name="timeline_tick">#FFB9BEBB</color>
+    <color name="timeline_axis_text">#FF8D9491</color>
+
+</resources>

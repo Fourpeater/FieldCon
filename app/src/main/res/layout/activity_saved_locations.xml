@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/savedLocationsRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/brand_green"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/brand_green"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height"
+                android:background="@color/brand_green"
+                app:navigationIcon="@drawable/ic_arrow_back">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/savedLocationsScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/screen_padding"
+            android:paddingTop="@dimen/screen_padding"
+            android:paddingBottom="@dimen/screen_padding_bottom">
+
+            <TextView
+                style="@style/ScreenTitleText"
+                android:text="@string/title_saved_locations" />
+
+            <TextView
+                style="@style/BodyText"
+                android:layout_marginTop="@dimen/space_item"
+                android:text="@string/saved_locations_intro" />
+
+            <TextView
+                style="@style/CaptionText"
+                android:layout_marginTop="@dimen/space_item"
+                android:text="@string/hint_tap_location" />
+
+            <!-- Shown instead of the cards below when nothing has been saved. -->
+            <TextView
+                android:id="@+id/textNoSavedLocations"
+                style="@style/BodyText"
+                android:layout_marginTop="@dimen/space_section"
+                android:background="@color/brand_green_wash"
+                android:padding="@dimen/card_padding_compact"
+                android:text="@string/msg_no_saved_locations"
+                android:textStyle="italic"
+                android:visibility="gone" />
+
+            <!-- ===================== Camp Bullis, TX ===================== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLocationBullis"
+                style="@style/FieldCard"
+                android:layout_marginTop="@dimen/space_section"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    style="@style/FieldCardBody"
+                    android:padding="@dimen/card_padding_compact">
+
+                    <TextView
+                        style="@style/ItemTitleText"
+                        android:text="@string/location_camp_bullis" />
+
+                    <TextView
+                        style="@style/CoordinateText"
+                        android:layout_marginTop="@dimen/space_paired"
+                        android:text="@string/saved_location_bullis_coords" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_tight"
+                        android:baselineAligned="false"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/CaptionText"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/saved_location_bullis_meta" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonDeleteLocationBullis"
+                            style="@style/CardActionButton.Secondary"
+                            android:layout_marginStart="@dimen/space_item"
+                            android:text="@string/action_delete" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ===================== Fort Irwin, CA ====================== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLocationIrwin"
+                style="@style/FieldCard"
+                android:layout_marginTop="@dimen/space_item"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    style="@style/FieldCardBody"
+                    android:padding="@dimen/card_padding_compact">
+
+                    <TextView
+                        style="@style/ItemTitleText"
+                        android:text="@string/saved_location_irwin" />
+
+                    <TextView
+                        style="@style/CoordinateText"
+                        android:layout_marginTop="@dimen/space_paired"
+                        android:text="@string/saved_location_irwin_coords" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_tight"
+                        android:baselineAligned="false"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/CaptionText"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/saved_location_irwin_meta" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonDeleteLocationIrwin"
+                            style="@style/CardActionButton.Secondary"
+                            android:layout_marginStart="@dimen/space_item"
+                            android:text="@string/action_delete" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============ Range 14, entered by hand, never used ============ -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLocationRange14"
+                style="@style/FieldCard"
+                android:layout_marginTop="@dimen/space_item"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    style="@style/FieldCardBody"
+                    android:padding="@dimen/card_padding_compact">
+
+                    <TextView
+                        style="@style/ItemTitleText"
+                        android:text="@string/saved_location_range14" />
+
+                    <TextView
+                        style="@style/CoordinateText"
+                        android:layout_marginTop="@dimen/space_paired"
+                        android:text="@string/saved_location_range14_coords" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_tight"
+                        android:baselineAligned="false"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/CaptionText"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/saved_location_range14_meta" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonDeleteLocationRange14"
+                            style="@style/CardActionButton.Secondary"
+                            android:layout_marginStart="@dimen/space_item"
+                            android:text="@string/action_delete" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--
+              Same four fields as the manual entry group on the session input screen, so a
+              location can be added without starting a session first.
+            -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/FieldCard"
+                android:layout_marginTop="@dimen/space_section">
+
+                <LinearLayout style="@style/FieldCardBody">
+
+                    <TextView
+                        style="@style/SectionLabelText"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/section_add_location" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_item"
+                        android:hint="@string/label_location_name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputNewLocationName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_item"
+                        android:hint="@string/label_latitude">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputNewLatitude"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal|numberSigned" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_item"
+                        android:hint="@string/label_longitude">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputNewLongitude"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal|numberSigned" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_item"
+                        android:hint="@string/label_utc_offset">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputNewUtcOffset"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal|numberSigned" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonAddLocation"
+                        style="@style/FieldButton.Primary"
+                        android:layout_marginTop="@dimen/space_block"
+                        android:text="@string/action_add_location" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

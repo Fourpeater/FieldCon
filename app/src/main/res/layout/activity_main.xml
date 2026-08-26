@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/homeRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/brand_green"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/brand_green"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height"
+                android:background="@color/brand_green">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/homeScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/screen_padding"
+            android:paddingTop="@dimen/screen_padding"
+            android:paddingBottom="@dimen/screen_padding_bottom">
+
+            <TextView
+                style="@style/ScreenTitleText"
+                android:text="@string/app_title" />
+
+            <TextView
+                style="@style/BodyText"
+                android:layout_marginTop="@dimen/space_item"
+                android:text="@string/app_tagline" />
+
+            <TextView
+                style="@style/BodyText"
+                android:layout_marginTop="@dimen/space_section"
+                android:background="@color/brand_green_wash"
+                android:padding="@dimen/card_padding_compact"
+                android:text="@string/app_disclaimer"
+                android:textStyle="italic" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonNewSession"
+                style="@style/FieldButton.Primary"
+                android:layout_marginTop="@dimen/space_action"
+                android:text="@string/action_new_session_plan" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSavedLocations"
+                style="@style/FieldButton.Secondary"
+                android:layout_marginTop="@dimen/space_block"
+                android:text="@string/action_saved_locations" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSavedRecords"
+                style="@style/FieldButton.Secondary"
+                android:layout_marginTop="@dimen/space_block"
+                android:text="@string/action_saved_records" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

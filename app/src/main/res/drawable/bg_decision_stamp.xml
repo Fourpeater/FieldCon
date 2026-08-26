@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sits behind the approve / deny stamp on a saved record. Painted white so the colour comes from
+  android:backgroundTint, and given the risk badge's corner radius so a record's two marks - the
+  heat category and the decision - read as one family.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="@dimen/risk_badge_corner_radius" />
+    <solid android:color="@color/white" />
+</shape>

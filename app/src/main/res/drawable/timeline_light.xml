@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  24 hour light timeline for the sample session (Camp Bullis, TX, 15 Aug 2026).
+
+  The sky is one stadium-shaped path filled with a linear gradient carrying one colour stop
+  per solar event: deep night, astronomical / nautical / civil twilight, sunrise, solar noon,
+  then the same sequence in reverse into dusk. Viewport units are dp at a 371dp content width,
+  so 1 unit = 1 hour / 15.458.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="371dp"
+    android:height="108dp"
+    android:viewportWidth="371"
+    android:viewportHeight="108">
+
+    <!-- Sky -->
+    <path android:pathData="M50.0,0 H321.0 A50.0,50.0 0 0 1 321.0,100.0 H50.0 A50.0,50.0 0 0 1 50.0,0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="0"
+                android:startY="0"
+                android:endX="371"
+                android:endY="0">
+                <item android:offset="0.00000" android:color="@color/sky_night" />
+                <item android:offset="0.21319" android:color="@color/sky_night" />
+                <item android:offset="0.23403" android:color="@color/sky_astronomical" />
+                <item android:offset="0.25486" android:color="@color/sky_nautical" />
+                <item android:offset="0.27569" android:color="@color/sky_civil" />
+                <item android:offset="0.29306" android:color="@color/sky_sunrise" />
+                <item android:offset="0.56875" android:color="@color/sky_midday" />
+                <item android:offset="0.84375" android:color="@color/sky_sunset" />
+                <item android:offset="0.86111" android:color="@color/sky_civil" />
+                <item android:offset="0.88194" android:color="@color/sky_nautical" />
+                <item android:offset="0.90347" android:color="@color/sky_astronomical" />
+                <item android:offset="0.92500" android:color="@color/sky_night" />
+                <item android:offset="1.00000" android:color="@color/sky_night" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Sunrise and sunset -->
+    <path
+        android:fillColor="@color/timeline_glyph"
+        android:pathData="M102.87,75.80 A5.85,5.85 0 0 1 114.57,75.80 Z M101.22,77.67 H116.22 V79.33 H101.22 Z M108.72,81.20 L111.72,86.60 L105.72,86.60 Z" />
+    <path
+        android:fillColor="@color/timeline_glyph"
+        android:pathData="M307.18,75.80 A5.85,5.85 0 0 1 318.88,75.80 Z M305.53,77.67 H320.53 V79.33 H305.53 Z M310.03,81.20 L316.03,81.20 L313.03,86.60 Z" />
+
+    <!-- 14:00 marker -->
+    <path
+        android:fillColor="#BEFFFFFF"
+        android:pathData="M215.67,0 H217.17 V100.0 H215.67 Z" />
+    <path
+        android:fillColor="@color/timeline_marker"
+        android:pathData="M216.42,8.5 a3.5,3.5 0 1,0 0,7.0 a3.5,3.5 0 1,0 0,-7.0 Z" />
+
+    <!-- Hour ticks, longer every six hours -->
+    <path
+        android:pathData="M0.50,103.0 V108.0 M15.46,103.0 V106.0 M30.92,103.0 V106.0 M46.38,103.0 V106.0 M61.83,103.0 V106.0 M77.29,103.0 V106.0 M92.75,103.0 V108.0 M108.21,103.0 V106.0 M123.67,103.0 V106.0 M139.12,103.0 V106.0 M154.58,103.0 V106.0 M170.04,103.0 V106.0 M185.50,103.0 V108.0 M200.96,103.0 V106.0 M216.42,103.0 V106.0 M231.88,103.0 V106.0 M247.33,103.0 V106.0 M262.79,103.0 V106.0 M278.25,103.0 V108.0 M293.71,103.0 V106.0 M309.17,103.0 V106.0 M324.62,103.0 V106.0 M340.08,103.0 V106.0 M355.54,103.0 V106.0 M370.50,103.0 V108.0"
+        android:strokeColor="@color/timeline_tick"
+        android:strokeWidth="1" />
+
+</vector>
