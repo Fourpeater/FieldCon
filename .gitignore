@@ -11,6 +11,7 @@
 .externalNativeBuild
 .cxx
 .DS_Store
+/docs
 
 # Points at THIS machine's Android SDK. Android Studio rewrites it on first
 # sync, so committing it would break the build on every other machine.

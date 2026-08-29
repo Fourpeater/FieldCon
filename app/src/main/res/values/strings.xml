@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- =================== COMMENT TEMPLATE SIGMA DOG =================== -->
 
     <!-- ============================ App-wide ============================ -->
     <string name="app_name">FieldCon</string>
     <string name="app_title">Field Conditions Planner</string>
-    <string name="app_tagline">Answers on question: when is it safe to work, and can you see what you\'re doing? Thermal guidance from publishes tables; light and darkness from on-device astronomical calculation. No network required.</string>
+    <string name="app_tagline">Answers on question: when is it safe to work, and can you see what you\'re doing? Thermal guidance from published tables; light and darkness from on-device astronomical calculation. No network required.</string>
     <string name="app_disclaimer">Offline planning aid. Not a measuring instrument. You are responsible for the inputs you supply.</string>
 
     <!-- ============================== Home ============================== -->
     <string name="action_new_session_plan">New Session Plan</string>
-    <string name="action_saved_locations">Saved Locations</string>
-    <string name="action_saved_records">Saved Records</string>
+    <string name="action_saved_locations">Manage Locations</string>
+    <string name="action_saved_records">View Records</string>
 
     <!-- ========================== Session input ========================== -->
     <string name="title_new_session">New Session</string>
