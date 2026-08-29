@@ -180,10 +180,16 @@
                     android:text="@string/option_work_moderate" />
 
                 <RadioButton
-                    android:id="@+id/radioWorkHard"
+                    android:id="@+id/radioWorkHeavy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/option_work_hard" />
+                    android:text="@string/option_work_heavy" />
+
+                <RadioButton
+                    android:id="@+id/radioWorkVeryHeavy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/option_work_very_heavy" />
             </RadioGroup>
 
             <!-- Acclimatization -->

@@ -4,13 +4,13 @@
     <!-- ============================ App-wide ============================ -->
     <string name="app_name">FieldCon</string>
     <string name="app_title">Field Conditions Planner</string>
-    <string name="app_tagline">Answers on question: when is it safe to work, and can you see what you\'re doing? Thermal guidance from published tables; light and darkness from on-device astronomical calculation. No network required.</string>
+    <string name="app_tagline">Answers two questions: when is it safe to work, and can you see what you\'re doing? Thermal guidance from published tables; light and darkness from on-device astronomical calculation. No network required.</string>
     <string name="app_disclaimer">Offline planning aid. Not a measuring instrument. You are responsible for the inputs you supply.</string>
 
     <!-- ============================== Home ============================== -->
     <string name="action_new_session_plan">New Session Plan</string>
-    <string name="action_saved_locations">Manage Locations</string>
-    <string name="action_saved_records">View Records</string>
+    <string name="action_saved_locations">Saved Locations</string>
+    <string name="action_saved_records">Saved Records</string>
 
     <!-- ========================== Session input ========================== -->
     <string name="title_new_session">New Session</string>
@@ -32,24 +32,32 @@
     <string name="label_temp_f">Air temperature (°F)</string>
     <string name="label_rh_percent">Relative humidity (%)</string>
 
-    <string name="option_work_easy">Easy</string>
-    <string name="option_work_moderate">Moderate</string>
-    <string name="option_work_hard">Hard</string>
+    <!-- The four work intensities of TB MED 507 (12 Apr 2022) Table 3-2, with the
+         publication's own metabolic rates. "Hard" was the 2003 edition's name for
+         the 600 W column and there was no 800 W column at all. -->
+    <string name="option_work_easy">Easy (250 W)</string>
+    <string name="option_work_moderate">Moderate (425 W)</string>
+    <string name="option_work_heavy">Heavy (600 W)</string>
+    <string name="option_work_very_heavy">Very heavy (800 W)</string>
     <string name="option_not_acclimatized">Not acclimatized</string>
     <string name="option_acclimatized">Acclimatized</string>
     <string name="option_mode_measured_wbgt">Measured WBGT</string>
-    <string name="option_mode_heat_index">Heat Index (temp + humidity)</string>
+    <string name="option_mode_heat_index">Estimate from temperature and humidity</string>
 
     <string-array name="location_options">
         <item>@string/location_camp_bullis</item>
         <item>@string/label_manual_entry</item>
     </string-array>
 
-    <!-- Clothing adjustments to WBGT, TB MED 507 table 3-2. -->
+    <!-- Clothing adjustments to the WBGT index, TB MED 507 (12 Apr 2022) Table 3-2 note 7.
+         Two options, because those are the only two the publication supports. The heavy
+         protective clothing penalty depends on work rate (+10 °F easy, +20 °F moderate and
+         heavy), so the label carries no number. Body armor is deliberately absent: appendix
+         B-3f states ballistic protection "adds minimally to heat strain independent of the
+         added weight carried", which makes it a work rate question, not a clothing one. -->
     <string-array name="clothing_options">
-        <item>Work uniform (no adjustment)</item>
-        <item>Body armor (+5 °F WBGT)</item>
-        <item>MOPP 4 (+10 °F WBGT)</item>
+        <item>OCP uniform (no adjustment)</item>
+        <item>Heavy protective clothing (CBRN, JSLIST)</item>
     </string-array>
 
     <string name="action_save_location">Save this location</string>
@@ -76,18 +84,18 @@
     <string name="risk_high">High risk</string>
     <string name="risk_extreme">Extreme risk</string>
 
-    <string name="risk_glyph">R</string>
-    <string name="risk_headline">Red - High risk</string>
-    <string name="wbgt_measured">WBGT 88.4 °F (measured)</string>
-    <string name="risk_description">High casualty risk for unacclimatized personnel at moderate work.</string>
-    <string name="work_rest_line">Work / rest: 30 min work, 30 min rest</string>
+    <string name="risk_glyph">B</string>
+    <string name="risk_headline">Black - Extreme risk</string>
+    <string name="wbgt_measured">WBGT 88.4 °F measured - 108.4 °F index adjusted for protective clothing</string>
+    <string name="risk_description">Extreme casualty risk for unacclimatized personnel at moderate work in protective clothing.</string>
+    <string name="work_rest_line">Work / rest: 20 min work, 40 min rest</string>
     <string name="water_line">Water: 1 qt per hour. Do not exceed 1 1/2 qt/hr or 12 qt/day.</string>
-    <string name="thermal_method_measured">Method: measured WBGT, work/rest table lookup.</string>
+    <string name="thermal_method_measured">Method: measured WBGT, TB MED 507 (12 Apr 2022) Table 3-2 lookup. Table figures are for acclimatized personnel.</string>
 
     <!-- ================== Session result: light timeline ================== -->
     <string name="section_light_timeline">Light timeline</string>
     <string name="astro_summary">Sunrise 07:02 - Sunset 20:15 - Civil dusk 20:40</string>
-    <string name="moon_summary">Waxing gibbous, 78% illuminated - Moonrise 17:36</string>
+    <string name="moon_summary">Waxing crescent, 11% illuminated - Moonrise 10:04</string>
     <string name="hour_00">00</string>
     <string name="hour_06">06</string>
     <string name="hour_12">12</string>
@@ -99,7 +107,7 @@
     <string name="section_recommended_windows">Recommended Windows</string>
     <string name="window_best">1 - Best window</string>
     <string name="window_best_range">07:05 - 09:35</string>
-    <string name="window_best_reason">Full daylight, WBGT below 82 °F, green band.</string>
+    <string name="window_best_reason">Full daylight, WBGT below 82 °F, white band.</string>
     <string name="window_alternate">2 - Alternate</string>
     <string name="window_alternate_range">19:20 - 20:40</string>
     <string name="window_alternate_reason">Falling heat load, daylight into civil dusk.</string>
@@ -148,32 +156,32 @@
     <string name="label_best_window">Best window</string>
     <string name="label_work_rest">Work / rest</string>
 
-    <!-- Heat category glyphs for the record badges. Red reuses @string/risk_glyph. -->
+    <!-- Heat category glyphs for the record badges. Black reuses @string/risk_glyph. -->
     <string name="risk_glyph_yellow">Y</string>
     <string name="risk_glyph_green">G</string>
 
     <!-- Sample record 1: Camp Bullis, denied. The session the result screen shows. -->
     <string name="record_1_when">Sat, 15 Aug 2026 - recorded 06:41</string>
-    <string name="record_1_risk">Red - High risk</string>
-    <string name="record_1_conditions">WBGT 88.4 °F (measured) - moderate work, not acclimatized, body armor.</string>
-    <string name="record_1_window">07:05 - 09:35</string>
-    <string name="record_1_work_rest">30 / 30 min</string>
+    <string name="record_1_risk">Black - Extreme risk</string>
+    <string name="record_1_conditions">WBGT 88.4 °F measured, 108.4 °F index - moderate work, not acclimatized, CBRN protective clothing.</string>
+    <string name="record_1_window">None found</string>
+    <string name="record_1_work_rest">20 / 40 min</string>
     <string name="record_1_recorded_by">Recorded by SSG Ugale.</string>
-    <string name="record_1_note">Deferred to 16 Aug first light. Crew arrived yesterday and the armor adjustment puts the afternoon over the line.</string>
+    <string name="record_1_note">Deferred to 16 Aug first light. Crew arrived yesterday and the clothing adjustment puts the whole day over the line.</string>
 
     <!-- Sample record 2: Camp Bullis, approved -->
     <string name="record_2_when">Fri, 14 Aug 2026 - recorded 05:58</string>
     <string name="record_2_risk">Yellow - Elevated risk</string>
-    <string name="record_2_conditions">WBGT 86.2 °F (measured) - moderate work, not acclimatized, work uniform.</string>
+    <string name="record_2_conditions">WBGT 86.2 °F (measured) - moderate work, not acclimatized, OCP uniform.</string>
     <string name="record_2_window">06:55 - 10:10</string>
-    <string name="record_2_work_rest">40 / 20 min</string>
+    <string name="record_2_work_rest">No limit</string>
     <string name="record_2_recorded_by">Recorded by SSG Ugale.</string>
     <string name="record_2_note">Water and shade posted at the start point. Held to the morning window, off the range by 1030.</string>
 
     <!-- Sample record 3: Fort Irwin, approved, estimated from temperature and humidity -->
     <string name="record_3_when">Thu, 02 Jul 2026 - recorded 19:12</string>
     <string name="record_3_risk">Green - Moderate risk</string>
-    <string name="record_3_conditions">WBGT 83.4 °F (estimated from 98 °F, 15% RH) - easy work, acclimatized, work uniform.</string>
+    <string name="record_3_conditions">WBGT 83.0 °F (estimated from 98 °F, 15% RH) - easy work, acclimatized, OCP uniform.</string>
     <string name="record_3_window">05:25 - 08:10</string>
     <string name="record_3_work_rest">No limit</string>
     <string name="record_3_recorded_by">Recorded by SGT Reyes.</string>

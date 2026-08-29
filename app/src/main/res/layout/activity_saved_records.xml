@@ -91,7 +91,7 @@
                         <TextView
                             android:id="@+id/textRecord1Glyph"
                             style="@style/RiskBadgeCompact"
-                            android:backgroundTint="@color/flag_red"
+                            android:backgroundTint="@color/flag_black"
                             android:text="@string/risk_glyph" />
 
                         <LinearLayout

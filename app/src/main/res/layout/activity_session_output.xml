@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/sessionOutputRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -89,6 +90,7 @@
                             android:layout_width="@dimen/risk_badge_size"
                             android:layout_height="@dimen/risk_badge_size"
                             android:background="@drawable/bg_risk_badge"
+                            android:backgroundTint="@color/flag_black"
                             android:gravity="center"
                             android:textColor="@color/white"
                             android:textSize="22sp"
@@ -251,12 +253,17 @@
                 android:background="@color/brand_green_wash"
                 android:padding="@dimen/card_padding_compact"
                 android:text="@string/msg_no_recommended_windows"
-                android:textStyle="italic"
-                android:visibility="gone" />
+                android:textStyle="italic" />
 
+            <!-- The sample session is Black all day, so no window is workable and the
+                 empty state above is what renders. These two cards keep their strings and
+                 stay visible in the Studio preview, the same idiom groupManualLocation and
+                 groupTempHumidity use. See docs/thermal-backend.md section 16.2.1. -->
             <com.google.android.material.card.MaterialCardView
                 style="@style/FieldCard"
-                android:layout_marginTop="@dimen/space_item">
+                android:layout_marginTop="@dimen/space_item"
+                android:visibility="gone"
+                tools:visibility="visible">
 
                 <LinearLayout
                     style="@style/FieldCardBody"
@@ -300,7 +307,9 @@
             <com.google.android.material.card.MaterialCardView
                 style="@style/FieldCard"
                 android:layout_marginTop="@dimen/space_item"
-                android:layout_marginBottom="@dimen/space_item">
+                android:layout_marginBottom="@dimen/space_item"
+                android:visibility="gone"
+                tools:visibility="visible">
 
                 <LinearLayout
                     style="@style/FieldCardBody"
